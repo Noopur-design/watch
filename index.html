@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Watch Design</title>
+</head>
+<body>
+ <div class="watch">
+    <div id="time">00:00:00</div>
+   <script>
+   function timeupdate(){
+    const time = document.querySelector("#time")
+    let date   = new Date();
+    let hour = date.getHours().toString().padStart(2 ,'0')
+    let minute = date.getMinutes().toString().padStart(2,'0')
+    let second = date.getSeconds().toString().padStart(2 ,'0')
+    time.textContent = `${hour}:${minute}:${second}`;
+   }
+   setInterval(timeupdate, 1000);
+
+   timeupdate();
+
+   </script>
+</body>
+</html>
